@@ -1,0 +1,46 @@
+<div class="medication-list-container flex flex-col justify-center items-center pt-[20px]">
+
+  <h1 class="text-7xl">Medicator</h1>
+
+  <div class="row w-full max-w-[min(90%,1024px)] flex justify-between items-center">
+    <div></div>
+    <nz-input-group class="rounded-full max-w-[min(90%,500px)] mt-[40px] mb-[30px]"
+                    [nzSuffix]="suffixIconSearch">
+      <input class="w-full"
+             [(ngModel)]="searchTerm"
+             (ngModelChange)="handleSearch($event)"
+             type="text"
+             nz-input
+             placeholder="Search added medications" />
+    </nz-input-group>
+    <button class="rounded-lg" nz-button nzType="primary">Add medication</button>
+  </div>
+
+  <nz-table class="w-full max-w-[min(90%,1024px)]"
+            #medicationTable
+            [nzData]="medications">
+    <thead>
+    <tr>
+      <th>Medication</th>
+      <th>Dosage</th>
+      <th>Frequency</th>
+      <th>Last Updated</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (data of filteredMedications; track data) {
+        <tr>
+          <td>{{ data.name }}</td>
+          <td>{{ data.dosage }}</td>
+          <td>{{ data.days + 'at' + data.times }}</td>
+          <td>{{ data.lastUpdate | date }}</td>
+        </tr>
+      }
+    </tbody>
+  </nz-table>
+</div>
+
+
+<ng-template #suffixIconSearch>
+  <nz-icon nzType="search" />
+</ng-template>
