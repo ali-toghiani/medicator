@@ -1,0 +1,92 @@
+[
+  {
+    "id": 12345,
+    "name": "Aspirin",
+    "dosage": 500,
+    "unit": "milligrams",
+    "days": ["monday", "wednesday", "friday"],
+    "times": ["08:00", "20:00"],
+    "lastUpdate": "2024-12-15T14:23:00"
+  },
+  {
+    "id": 67890,
+    "name": "Ibuprofen",
+    "dosage": 200,
+    "unit": "tablets",
+    "days": ["tuesday", "thursday"],
+    "times": ["07:00", "19:00"],
+    "lastUpdate": "2025-01-03T09:12:34"
+  },
+  {
+    "id": 54321,
+    "name": "Vitamin D",
+    "dosage": 1,
+    "unit": "capsules",
+    "days": ["sunday"],
+    "times": ["09:00"],
+    "lastUpdate": "2024-11-28T18:45:00"
+  },
+  {
+    "id": 98765,
+    "name": "Cough Syrup",
+    "dosage": 10,
+    "unit": "drops",
+    "days": ["monday", "tuesday", "wednesday"],
+    "times": ["10:00", "22:00"],
+    "lastUpdate": "2024-10-12T07:30:15"
+  },
+  {
+    "id": 11223,
+    "name": "Antibiotic",
+    "dosage": 250,
+    "unit": "milligrams",
+    "days": ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    "times": ["08:00", "20:00"],
+    "lastUpdate": "2024-11-03T12:14:25"
+  },
+  {
+    "id": 44556,
+    "name": "Eye Drops",
+    "dosage": 2,
+    "unit": "applications",
+    "days": ["saturday", "sunday"],
+    "times": ["06:00", "18:00"],
+    "lastUpdate": "2024-12-01T08:05:40"
+  },
+  {
+    "id": 77889,
+    "name": "Calcium Supplement",
+    "dosage": 500,
+    "unit": "milligrams",
+    "days": ["monday", "wednesday", "friday"],
+    "times": ["08:30"],
+    "lastUpdate": "2025-01-02T16:22:10"
+  },
+  {
+    "id": 99001,
+    "name": "Insulin",
+    "dosage": 15,
+    "unit": "drops",
+    "days": ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"],
+    "times": ["07:00", "19:00"],
+    "lastUpdate": "2024-12-20T21:18:50"
+  },
+  {
+    "id": 33445,
+    "name": "Multivitamin",
+    "dosage": 1,
+    "unit": "tablets",
+    "days": ["tuesday", "thursday", "saturday"],
+    "times": ["08:00"],
+    "lastUpdate": "2024-10-30T15:12:30"
+  },
+  {
+    "id": 55667,
+    "name": "Pain Relief Gel",
+    "dosage": 2,
+    "unit": "applications",
+    "days": ["sunday"],
+    "times": ["10:00", "22:00"],
+    "lastUpdate": "2024-11-15T06:40:00"
+  }
+]
