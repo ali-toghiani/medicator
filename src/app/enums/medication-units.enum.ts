@@ -1,8 +1,8 @@
 export enum MedicationUnit {
-  CAPSULES = 'CAPSULES',
-  TABLETS = 'TABLETS',
-  APPLICATIONS = 'APPLICATIONS',
-  DROPS = 'DROPS',
-  MILLIGRAMS = 'MILLIGRAMS',
-  MICROGRAMS = 'MICROGRAMS',
+  CAPSULES = 'capsules',
+  TABLETS = 'tablets',
+  APPLICATIONS = 'applications',
+  DROPS = 'drops',
+  MILLIGRAMS = 'milligrams',
+  MICROGRAMS = 'micrograms',
 }

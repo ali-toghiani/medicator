@@ -1,3 +1,3 @@
 export enum BaseRoutes {
-  LIST = 'LIST',
+  LIST = 'list',
 }

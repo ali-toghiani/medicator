@@ -1,0 +1,33 @@
+.bordered-box {
+  position: relative;
+  border: 2px solid black;
+}
+
+.cutout-text {
+  position: absolute;
+  top: -10px;
+  left: 10px;
+  background: white;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.days-btn{
+  border-radius: 0;
+  margin: 0;
+  width: 50px;
+  text-align: center;
+}
+.days-btn:first-child{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.days-btn:last-child{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.days-btn.ant-btn-primary {
+  background-color: #85a5ff;
+  border-color: #85a5ff;
+}

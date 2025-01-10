@@ -1,0 +1,112 @@
+<nz-modal [nzVisible]="true"
+          nzTitle="Add medication"
+          [nzOkText]="'Add'"
+          (nzOnCancel)="handleCancel()"
+          (nzOnOk)="handleOk()">
+  <ng-container *nzModalContent>
+    <form class="flex flex-col gap-[20px]" [formGroup]="form">
+
+
+      <nz-form-item>
+        <nz-form-label nzFor="name"
+                       nzRequired>
+          Name
+        </nz-form-label>
+        <nz-form-control nzErrorTip="Name must have at least 3 characters!">
+          <input id="name"
+                 formControlName="name"
+                 nz-input
+                 placeholder="Medication Name"
+                 [minlength]="3"/>
+        </nz-form-control>
+      </nz-form-item>
+
+
+      <div class="row w-full flex items-start justify-between gap-[20px]">
+
+        <nz-form-item class="w-full">
+          <nz-form-label nzFor="dosage"
+                         nzRequired>
+            Dosage
+          </nz-form-label>
+          <nz-form-control nzErrorTip="Dosage Must be a Positive Number">
+            <nz-input-number class="w-full"
+                             formControlName="dosage"
+                             nz-input
+                             placeholder="Dosage"
+                             min="0"/>
+          </nz-form-control>
+        </nz-form-item>
+
+        <nz-select class="w-[150px]" formControlName="unit" [nzPlaceHolder]="'dosage unit'">
+          @for(option of unitOptions; track option){
+            <nz-option class="unit-option"
+                       [nzValue]="option.value"
+                       [nzLabel]="option.label">
+            </nz-option>
+          }
+        </nz-select>
+
+      </div>
+
+      <nz-divider class="my-0" nzType="horizontal"></nz-divider>
+
+      <div class="bordered-box w-full min-h-[300px] p-[15px]">
+        <span class="cutout-text">Frequency</span>
+
+        <div class="days-selector flex flex-col gap-[10px]">
+          <label>Days</label>
+          <nz-form-control [nzValidateStatus]="form.controls.days.invalid ? 'error': 'success'"
+                           nzErrorTip="At least One Day must be selected!">
+            <nz-button-group class="days-btn-group">
+              @for(day of days; track day){
+                <button class="days-btn"
+                        nz-button
+                        [nzType]="form.controls.days.value.includes(day) ? 'primary' : 'default'"
+                        (click)="toggleDaySelection(day)">
+                  {{ day | shortenDay }}
+                </button>
+              }
+            </nz-button-group>
+          </nz-form-control>
+        </div>
+
+        <div class="time-section mt-[20px]">
+          <label class="mb-[15px] block">Times</label>
+
+          <div formArrayName="times">
+            @for(timeControl of form.controls.times.controls;let i = $index; track timeControl){
+              <div class="time-picker mb-[25px] flex gap-[10px]" [formGroupName]="i">
+                <nz-form-control class="max-w-[200px]"
+                                 nzErrorTip="Times Must be Unique!"
+                                 [nzValidateStatus]="timeControl.errors && timeControl.errors['duplicate'] ? 'error' : 'success'">
+                  <nz-time-picker class="w-[200px]"
+                                  [formControl]="timeControl"
+                                  [nzFormat]="'HH:mm'"
+                  ></nz-time-picker>
+                </nz-form-control>
+                <button class="delete-time-btn"
+                        nz-button
+                        nzType="default"
+                        nzShape="circle"
+                        [disabled]="form.controls.times.controls.length === 1"
+                        (click)="removeTime(i)">
+                  <i nz-icon nzType="delete"></i>
+                </button>
+              </div>
+            }
+          </div>
+          <button class="add-time-btn px-0"nz-button
+                  nzType="link"
+                  (click)="addTime()"
+                  [disabled]="times.length >= 5">
+            <i nz-icon
+               nzType="plus">
+            </i>
+            Add Time
+          </button>
+        </div>
+      </div>
+    </form>
+  </ng-container>
+</nz-modal>
