@@ -7,18 +7,24 @@
     <nz-input-group class="rounded-full max-w-[min(90%,500px)] mt-[40px] mb-[30px]"
                     [nzSuffix]="suffixIconSearch">
       <input class="w-full"
-             [(ngModel)]="searchTerm"
-             (ngModelChange)="handleSearch($event)"
+             [value]="searchTerm()"
+             (input)="searchTerm.set($any($event.target).value)"
              type="text"
              nz-input
              placeholder="Search added medications" />
     </nz-input-group>
-    <button class="rounded-lg" nz-button nzType="primary">Add medication</button>
+    <button class="rounded-lg"
+            nz-button
+            nzType="primary"
+            (click)="isVisibleAddModal = true">
+      Add medication
+    </button>
   </div>
 
   <nz-table class="w-full max-w-[min(90%,1024px)]"
             #medicationTable
-            [nzData]="medications">
+            [nzShowPagination]="false"
+            [nzData]="filteredMedications()">
     <thead>
     <tr>
       <th>Medication</th>
@@ -28,9 +34,9 @@
     </tr>
     </thead>
     <tbody>
-      @for (data of filteredMedications; track data) {
+      @for (data of filteredMedications(); track data) {
         <tr>
-          <td>{{ data.name }}</td>
+          <td nz-typography resultHighlighter  [value]="data.name" [query]="searchTerm()"></td>
           <td>{{ data.dosage }}</td>
           <td>{{ data.days + 'at' + data.times }}</td>
           <td>{{ data.lastUpdate | date }}</td>
@@ -44,3 +50,9 @@
 <ng-template #suffixIconSearch>
   <nz-icon nzType="search" />
 </ng-template>
+
+@if(isVisibleAddModal){
+  <app-add-medication-modal class="add-modecation-modal"
+                            (closeModal)="isVisibleAddModal = false">
+  </app-add-medication-modal>
+}
