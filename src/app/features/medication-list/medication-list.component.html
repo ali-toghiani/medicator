@@ -38,8 +38,20 @@
         <tr>
           <td nz-typography resultHighlighter  [value]="data.name" [query]="searchTerm()"></td>
           <td>{{ data.dosage }}</td>
-          <td>{{ data.days + 'at' + data.times }}</td>
-          <td>{{ data.lastUpdate | date }}</td>
+          <td>
+            <span class="days">
+              @for(day of data.days; track day){
+                {{(day | shortenDay) + (!$last ? ' ,' : '')}}
+              }
+            </span>
+            at
+            <span class="times">
+              @for(time of data.times; track time){
+                {{ time + (!$last ? ' ,' : '')}}
+              }
+            </span>
+          </td>
+          <td>{{ data.lastUpdate | date:'dd/MM/yyyy hh:mm:ss' }}</td>
         </tr>
       }
     </tbody>

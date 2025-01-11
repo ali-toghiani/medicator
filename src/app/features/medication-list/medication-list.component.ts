@@ -11,16 +11,18 @@ import {Medication} from '../../models/medication.model';
 import {AddMedicationModalComponent} from '../add-medication-modal/add-medication-modal.component';
 import {ResultHighlighterDirective} from '../../directives/result-highlighter.directive';
 import {LocalStorageService} from '../../services/local-storage.service';
+import {ShortenDayPipe} from '../../pipes/shorten-day.pipe';
 
 @Component({
   selector: 'app-medication-list',
   imports: [
+    FormsModule,
     DatePipe,
     NzTableModule,
     NzInputModule,
     NzButtonModule,
     ResultHighlighterDirective,
-    FormsModule,
+    ShortenDayPipe,
     AddMedicationModalComponent
   ],
   templateUrl: './medication-list.component.html',
