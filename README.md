@@ -1,59 +1,108 @@
-# Medicator
+# Medicator - Medication Tracking Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+## Overview
 
-## Development server
+Medicator is an Angular-based web application designed to help users track their medications. The application allows users to:
 
-To start a local development server, run:
+- View a list of medications with detailed information
+- Search for specific medications
+- Add new medications with customizable dosage, frequency, and schedule
+- Store medication data persistently using browser local storage
 
-```bash
-ng serve
+## Features
+
+### Medication Management
+- **List View**: Display all medications in a searchable, filterable table
+- **Add Medication**: Form with validation for adding new medications
+- **Medication Details**: Track medication name, dosage, units, days of the week, and specific times
+
+### User Experience
+- **Responsive Design**: Works on desktop and mobile devices
+- **Search Functionality**: Quickly find medications by name
+- **Modern UI**: Clean interface using ng-zorro-antd components and TailwindCSS
+- **Offline Capability**: Works without internet connection after initial load
+
+## Technology Stack
+
+- **Framework**: Angular 19
+- **UI Components**: ng-zorro-antd
+- **Styling**: SCSS with TailwindCSS
+- **State Management**: Angular Signals
+- **Data Storage**: Local Storage
+- **Build Tools**: Angular CLI
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── directives/        # Custom directives
+│   ├── enums/             # Type enumerations
+│   ├── features/          # Feature components
+│   │   ├── add-medication-modal/
+│   │   └── medication-list/
+│   ├── models/            # Data models
+│   ├── pipes/             # Custom pipes
+│   └── services/          # Application services
+├── assets/                # Static assets and mock data
+└── styles/                # Global styles
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Getting Started
 
-## Code scaffolding
+### Prerequisites
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- Node.js (version 16.x or higher)
+- npm (version 8.x or higher)
 
-```bash
-ng generate component component-name
-```
+### Installation
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/medicator.git
+   cd medicator
+   ```
 
-```bash
-ng generate --help
-```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Building
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-To build the project run:
+4. Open your browser and navigate to `http://localhost:4200`
 
-```bash
-ng build
-```
+## Development
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+### Development Server
 
-## Running unit tests
+Run `ng serve` for a development server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Code Scaffolding
 
-```bash
-ng test
-```
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Running end-to-end tests
+### Build
 
-For end-to-end (e2e) testing, run:
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-```bash
-ng e2e
-```
+### Running Tests
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Additional Resources
+## Potential Improvements
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Add medication reminder functionality
+- Implement user authentication for personalized medication lists
+- Add photo upload for medication identification
+- Integrate with a backend service for data synchronization across devices
+- Create a mobile application using Capacitor or Cordova
+- Implement a calendar view for medication schedules
+- Add reporting/statistics features to track medication adherence
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
