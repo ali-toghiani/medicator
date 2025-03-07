@@ -12,6 +12,7 @@ import {AddMedicationModalComponent} from '../add-medication-modal/add-medicatio
 import {ResultHighlighterDirective} from '../../directives/result-highlighter.directive';
 import {LocalStorageService} from '../../services/local-storage.service';
 import {ShortenDayPipe} from '../../pipes/shorten-day.pipe';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
   selector: 'app-medication-list',
@@ -23,6 +24,7 @@ import {ShortenDayPipe} from '../../pipes/shorten-day.pipe';
     NzButtonModule,
     ResultHighlighterDirective,
     ShortenDayPipe,
+    NzIconModule,
     AddMedicationModalComponent
   ],
   templateUrl: './medication-list.component.html',

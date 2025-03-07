@@ -1,10 +1,10 @@
 <div class="medication-list-container flex flex-col justify-center items-center pt-[20px]">
 
-  <h1 class="text-7xl">Medicator</h1>
-
   <div class="row w-full max-w-[min(90%,1024px)] flex justify-between items-center">
-    <div></div>
-    <nz-input-group class="rounded-full max-w-[min(90%,500px)] mt-[40px] mb-[30px]"
+
+    <div class="3rd-column"></div>
+
+    <nz-input-group class="max-w-[min(90%,500px)] mt-[40px] mb-[30px] !rounded-[20px]"
                     [nzSuffix]="suffixIconSearch">
       <input class="w-full"
              [value]="searchTerm()"
@@ -13,15 +13,19 @@
              nz-input
              placeholder="Search added medications" />
     </nz-input-group>
+    
     <button class="rounded-lg"
             nz-button
+            nzShape="round"
             nzType="primary"
             (click)="isVisibleAddModal = true">
-      Add medication
+      <span>Add medication</span>
+      <nz-icon nzType="plus" />
     </button>
+    
   </div>
 
-  <nz-table class="w-full max-w-[min(90%,1024px)]"
+  <nz-table class="medication-table w-full max-w-[min(90%,1024px)] overflow-hidden rounded-[20px]"
             #medicationTable
             [nzShowPagination]="false"
             [nzData]="filteredMedications()">

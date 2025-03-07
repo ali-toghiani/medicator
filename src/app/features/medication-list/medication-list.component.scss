@@ -1,0 +1,5 @@
+.medication-table ::ng-deep {
+    .ant-table-row:nth-child(even) {
+        background-color: #f5f6f7;
+    }
+}
