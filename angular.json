@@ -52,7 +52,7 @@
               },
               "src/favicon.ico",
               "src/404.html",
-              ".nojekyll"
+              "src/.nojekyll"
             ],
             "styles": [
               "src/styles.scss",
