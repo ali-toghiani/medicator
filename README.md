@@ -1,5 +1,7 @@
 # Medicator - Medication Tracking Application
 
+![Medicator Application Preview](src/assets/images/medicator-preview.png)
+
 ## Overview
 
 Medicator is an Angular-based web application designed to help users track their medications. The application allows users to:
