@@ -30,7 +30,7 @@ export class LocalStorageService {
   }
 
   private fetchMockData(): void {
-    this.http.get<Medication[]>('/assets/mock-data/medications.json')
+    this.http.get<Medication[]>('assets/mock-data/medications.json')
       .pipe(
         catchError(error => {
           console.error('Error fetching mock data:', error);
