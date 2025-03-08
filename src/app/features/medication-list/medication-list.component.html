@@ -4,7 +4,7 @@
 
     <div class="3rd-column"></div>
 
-    <nz-input-group class="max-w-[min(90%,500px)] mt-[40px] mb-[30px] !rounded-[20px]"
+    <nz-input-group class="max-w-[min(90%,500px)] mt-[20px] mb-[20px] !rounded-[20px]"
                     [nzSuffix]="suffixIconSearch">
       <input class="w-full"
              [value]="searchTerm()"
@@ -25,7 +25,7 @@
     
   </div>
 
-  <nz-table class="medication-table w-full max-w-[min(90%,1024px)] overflow-hidden rounded-[20px]"
+  <nz-table class="medication-table w-full max-w-[min(90%,1024px)] overflow-hidden rounded-[20px] max-h-[calc(100vh-350px)] overflow-y-auto"
             #medicationTable
             [nzShowPagination]="false"
             [nzData]="filteredMedications()">
