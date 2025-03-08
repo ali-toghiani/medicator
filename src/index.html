@@ -9,6 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <script>
+    // Check if there's a redirect path stored in sessionStorage
+    (function() {
+      const redirect = sessionStorage.getItem('redirect');
+      if (redirect) {
+        sessionStorage.removeItem('redirect');
+        const baseHref = document.querySelector('base').getAttribute('href');
+        if (baseHref && redirect.startsWith(baseHref)) {
+          // Handle the redirect path correctly when using Angular router
+          history.replaceState(null, null, redirect);
+        }
+      }
+    })();
+  </script>
 </head>
 <body class="bg-gradient">
   <app-root></app-root>

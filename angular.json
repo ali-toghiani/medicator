@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/medicator",
+            "outputPath": "dist/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -35,17 +35,34 @@
                 "input": "./node_modules/@ant-design/icons-angular/src/inline-svg/",
                 "output": "/assets/"
               },
-              "src/assets",
-              "src/favicon.ico"
+              {
+                "glob": "**/*",
+                "input": "src/assets/mock-data",
+                "output": "/assets/mock-data"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/assets",
+                "ignore": ["mock-data/**/*"]
+              },
+              {
+                "glob": "**/*.svg",
+                "input": "src/assets/images",
+                "output": "/assets/images"
+              },
+              "src/favicon.ico",
+              "src/404.html",
+              ".nojekyll"
             ],
             "styles": [
-              "src/theme.less",
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/theme.less"
             ],
             "scripts": []
           },
           "configurations": {
             "production": {
+              "baseHref": "/medicator/",
               "budgets": [
                 {
                   "type": "initial",
@@ -106,7 +123,10 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "buildTarget": "medicator:build:production"
+          }
         }
       }
     }
