@@ -6,6 +6,8 @@
 
 Medicator is an Angular-based web application designed to help users track their medications. The application allows users to:
 
+**[View Live Demo](https://ali-toghiani.github.io/medicator/)**
+
 - View a list of medications with detailed information
 - Search for specific medications
 - Add new medications with customizable dosage, frequency, and schedule
