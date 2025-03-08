@@ -8,5 +8,5 @@ export interface Medication {
   unit: MedicationUnit;
   days: MedicationDays[];
   times: string[];
-  lastUpdate: Date;
+  lastUpdate: string;
 }

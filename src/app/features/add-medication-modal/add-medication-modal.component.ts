@@ -154,9 +154,9 @@ export class AddMedicationModalComponent {
       days: days.value,
       unit: unit.value,
       dosage: dosage.value,
-      times: times.value.map( time => time.toString()),
+      times: times.value.map( time => time.toISOString().slice(11, 16)),
       id: this.generateId(),
-      lastUpdate: new Date()
+      lastUpdate: new Date().toISOString()
     }
     return data;
   }
